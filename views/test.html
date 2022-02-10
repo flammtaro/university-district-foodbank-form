@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Tech Blog</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <ul class="nav justify-content-end">
+        <li class="nav-item">
+            <a class="nav-link" href="/login">Login</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#" id="logout-link">Logout</a>
+        </li>
+    </ul>
+    <main>
+        <div class="post card">
+            <div class="card-header">
+                <h2>Create New Order</h2>
+            </div>
+            <form class="row row-cols-lg-auto g-3 align-items-center">
+                <label for="bag" class="col-sm-2 col-form-label">What can you carry with you today? (leave blank if
+                    any)</label>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="bag">
+                        <label class="form-check-label" for="bag">
+                            Bags
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="box">
+                        <label class="form-check-label" for="box">
+                            Boxes
+                        </label>
+                    </div>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="number" min="0" class="form-control" id="bag_quantity">
+                    <label for="bag_quantity">No. of Bags</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="number" min="0" class="form-control" id="box_quantity">
+                    <label for="floatingInput">No. of Boxes</label>
+                </div>
+            </form>
+            <form class="row row-cols-lg-auto g-3 align-items-center">
+                <label for="canned_fruit" class="col-sm-2 col-form-label">Fruit:</label>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="canned_fruit">
+                        <label class="form-check-label" for="canned_fruit">
+                            Canned
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="dried_fruit">
+                        <label class="form-check-label" for="dried_fruit">
+                            Dried
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="any_fruit">
+                        <label class="form-check-label" for="any_fruit">
+                            Any
+                        </label>
+                    </div>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="fruit_preference">
+                    <label for="fruit_preference">Preferences</label>
+                </div>
+            </form>
+            <form class="row row-cols-lg-auto g-3 align-items-center">
+                <label for="rice" class="col-sm-2 col-form-label">Grains:</label>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="rice">
+                        <label class="form-check-label" for="rice">
+                            Rice
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="pasta">
+                        <label class="form-check-label" for="pasta">
+                            Pasta
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="cereal">
+                        <label class="form-check-label" for="cereal">
+                            Cereal
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="oatmeal">
+                        <label class="form-check-label" for="oatmeal">
+                            Oatmeal
+                        </label>
+                    </div>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="grain_preference">
+                    <label for="grain_preference">Preferences</label>
+                </div>
+            </form>
+            <form class="row row-cols-lg-auto g-3 align-items-center">
+                <label for="canned_tuna" class="col-sm-2 col-form-label">Protein:</label>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="canned_tuna">
+                        <label class="form-check-label" for="canned_tuna">
+                            Canned Tuna
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="peanut_butter">
+                        <label class="form-check-label" for="peanut_butter">
+                            Peanut Butter
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="canned_beans">
+                        <label class="form-check-label" for="canned_beans">
+                            Canned Beans
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="dried_beans">
+                        <label class="form-check-label" for="dried_beans">
+                            Dried Beans
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="lentils">
+                        <label class="form-check-label" for="lentils">
+                            Lentils
+                        </label>
+                    </div>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="protein_preference">
+                    <label for="protein_preference">Preferences</label>
+                </div>
+            </form>
+            <form class="row row-cols-lg-auto g-3 align-items-center">
+                <label for="canned_corn" class="col-sm-2 col-form-label">Vegetables:</label>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="canned_corn">
+                        <label class="form-check-label" for="canned_corn">
+                            Canned Corn
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="canned_tomato">
+                        <label class="form-check-label" for="canned_tomato">
+                            Canned Tomato
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="canned_soup">
+                        <label class="form-check-label" for="canned_soup">
+                            Canned Soup
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="other_veg">
+                        <label class="form-check-label" for="other_veg">
+                            Other
+                        </label>
+                    </div>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="vegetable_preference">
+                    <label for="vegetable_preference">Preferences</label>
+                </div>
+            </form>
+            <form class="row row-cols-lg-auto g-3 align-items-center">
+                <label for="coffee" class="col-sm-2 col-form-label">Drinks:</label>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="coffee">
+                        <label class="form-check-label" for="coffee">
+                            Coffee
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="tea">
+                        <label class="form-check-label" for="tea">
+                            Tea
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="juice">
+                        <label class="form-check-label" for="juice">
+                            Juice
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="seltzer">
+                        <label class="form-check-label" for="seltzer">
+                            Seltzer
+                        </label>
+                    </div>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="drink_preference">
+                    <label for="drink_preference">Preferences</label>
+                </div>
+            </form>
+            <form class="row row-cols-lg-auto g-3 align-items-center">
+                <label for="milk" class="col-sm-2 col-form-label">Milk:</label>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="milk">
+                        <label class="form-check-label" for="milk">
+                            Milk
+                        </label>
+                    </div>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="milk_preference">
+                    <label for="milk_preference">Preferences</label>
+                </div>
+            </form>
+            <form class="row row-cols-lg-auto g-3 align-items-center">
+                <label for="rice_milk" class="col-sm-2 col-form-label">Milk Alternatives:</label>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="rice_milk">
+                        <label class="form-check-label" for="rice_milk">
+                            Rice Milk
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="nut_milk">
+                        <label class="form-check-label" for="nut_milk">
+                            Nut Milk
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="soy_milk">
+                        <label class="form-check-label" for="soy_milk">
+                            Soy Milk
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="oat_milk">
+                        <label class="form-check-label" for="oat_milk">
+                            Oat Milk
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="goat_milk">
+                        <label class="form-check-label" for="goat_milk">
+                            Goat Milk
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="coconut_milk">
+                        <label class="form-check-label" for="coconut_milk">
+                            Coconut Milk
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="milk_alt_any">
+                        <label class="form-check-label" for="milk_alt_any">
+                            Any
+                        </label>
+                    </div>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="milk_alt_preference">
+                    <label for="milk_alt_preference">Preferences</label>
+                </div>
+            </form>
+            <form class="row row-cols-lg-auto g-3 align-items-center">
+                <label for="yogurt" class="col-sm-2 col-form-label">Yogurt:</label>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="yogurt">
+                        <label class="form-check-label" for="yogurt">
+                            Yogurt
+                        </label>
+                    </div>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="yogurt_preference">
+                    <label for="yogurt_preference">Preferences</label>
+                </div>
+            </form>
+            <form class="row row-cols-lg-auto g-3 align-items-center">
+                <label for="cheese" class="col-sm-2 col-form-label">Cheese:</label>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="cheese">
+                        <label class="form-check-label" for="cheese">
+                            Cheese
+                        </label>
+                    </div>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="cheese_preference">
+                    <label for="cheese_preference">Preferences</label>
+                </div>
+            </form>
+            <form class="row row-cols-lg-auto g-3 align-items-center">
+                <label for="sour_cream" class="col-sm-2 col-form-label">Other Dairy:</label>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="sour_cream">
+                        <label class="form-check-label" for="sour_cream">
+                            Sour Cream
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="cream_cheese">
+                        <label class="form-check-label" for="cream_cheese">
+                            Cream Cheese
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="cottage_cheese">
+                        <label class="form-check-label" for="cottage_cheese">
+                            Cottage Cheese
+                        </label>
+                    </div>
+                </div>
+            </form>
+            <form class="row row-cols-lg-auto g-3 align-items-center">
+                <label for="eggs" class="col-sm-2 col-form-label">Eggs and Butter:</label>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="eggs">
+                        <label class="form-check-label" for="eggs">
+                            Eggs
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="butter">
+                        <label class="form-check-label" for="butter">
+                            Butter
+                        </label>
+                    </div>
+                </div>
+            </form>
+            <form class="row row-cols-lg-auto g-3 align-items-center">
+                <label for="salad_greens" class="col-sm-2 col-form-label">Fresh Produce:</label>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="salad_greens">
+                        <label class="form-check-label" for="salad_greens">
+                            Salad Greens
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="kale_or_spinach">
+                        <label class="form-check-label" for="kale_or_spinach">
+                            Kale or Spinach
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="tomato">
+                        <label class="form-check-label" for="tomato">
+                            Tomatoes
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="grapes_or_berries">
+                        <label class="form-check-label" for="grapes_or_berries">
+                            Grapes or Berries
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="herbs">
+                        <label class="form-check-label" for="herbs">
+                            Herbs
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="zucchini_squash">
+                        <label class="form-check-label" for="zucchini_squash">
+                            Zucchini/Squash/Winter Squash
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="peppers">
+                        <label class="form-check-label" for="peppers">
+                            Peppers
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="carrots">
+                        <label class="form-check-label" for="carrots">
+                            Carrots
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="broccoli_cauliflower_cabbage">
+                        <label class="form-check-label" for="broccoli_cauliflower_cabbage">
+                            Broccoli/Cauliflower/Cabbage
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="celery_cucumber">
+                        <label class="form-check-label" for="celery_cucumber">
+                            Celery/Cucumbers
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="orange">
+                        <label class="form-check-label" for="orange">
+                            Oranges
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="lemon">
+                        <label class="form-check-label" for="lemon">
+                            Lemons
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="lime">
+                        <label class="form-check-label" for="lime">
+                            Limes
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="pear">
+                        <label class="form-check-label" for="pear">
+                            Pears
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="banana">
+                        <label class="form-check-label" for="banana">
+                            Bananas
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="avocado">
+                        <label class="form-check-label" for="avocado">
+                            Avocado
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="potato">
+                        <label class="form-check-label" for="potato">
+                            Potatoes
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="onion">
+                        <label class="form-check-label" for="onion">
+                            Onions
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="apple">
+                        <label class="form-check-label" for="apple">
+                            Apples
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="melon">
+                        <label class="form-check-label" for="melon">
+                            Melons
+                        </label>
+                    </div>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="milk_alt_preference">
+                    <label for="milk_alt_preference">Preferences or Other requests</label>
+                </div>
+            </form>
+            <form class="row row-cols-lg-auto g-3 align-items-center">
+                <label for="chicken" class="col-sm-2 col-form-label">Frozen Meat:</label>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="chicken">
+                        <label class="form-check-label" for="chicken">
+                            Chicken
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="turkey">
+                        <label class="form-check-label" for="turkey">
+                            Turkey
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="beef">
+                        <label class="form-check-label" for="beef">
+                            Beef
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="pork">
+                        <label class="form-check-label" for="pork">
+                            Pork
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="fish">
+                        <label class="form-check-label" for="fish">
+                            Fish
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="non_meat">
+                        <label class="form-check-label" for="non_meat">
+                            Non-Meat/ Fake Meat/ Tofu
+                        </label>
+                    </div>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="protien_preference">
+                    <label for="protien_preference">Preferences</label>
+                </div>
+            </form>
+            <form class="row row-cols-lg-auto g-3 align-items-center">
+                <label for="sandwich" class="col-sm-2 col-form-label">No-Cook Items (RESERVED FOR CUSTOMERS WITHOUT
+                    COOKING FACILITIES):</label>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="sandwich">
+                        <label class="form-check-label" for="sandwich">
+                            Sandwich
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="microwave_meals">
+                        <label class="form-check-label" for="microwave_meals">
+                            Microwave meals
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="pasta_deli_salad">
+                        <label class="form-check-label" for="pasta_deli_salad">
+                            Pasta/Deli Salad
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="garden_salad">
+                        <label class="form-check-label" for="garden_salad">
+                            Garden Salad
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="instant_oatmeal">
+                        <label class="form-check-label" for="instant_oatmeal">
+                            Instant Oatmeal
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="instant_noodles">
+                        <label class="form-check-label" for="instant_noodles">
+                            Instant Noodles
+                        </label>
+                    </div>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="no_cook_preference">
+                    <label for="no_cook_preference">Preferences</label>
+                </div>
+            </form>
+            <form class="row row-cols-lg-auto g-3 align-items-center">
+                <label for="white_bread" class="col-sm-2 col-form-label">Bread and Baked goods:</label>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="white_bread">
+                        <label class="form-check-label" for="white_bread">
+                            White Bread
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="wheat_bread">
+                        <label class="form-check-label" for="wheat_bread">
+                            Wheat Bread
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="corn_tortillas">
+                        <label class="form-check-label" for="corn_tortillas">
+                            Corn Tortillas
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="flour_tortillas">
+                        <label class="form-check-label" for="flour_tortillas">
+                            Flour Tortillas
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="bagels">
+                        <label class="form-check-label" for="bagels">
+                            Bagels
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="artisan_baguette">
+                        <label class="form-check-label" for="artisan_baguette">
+                            Artisan Baguette
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="rolls_buns">
+                        <label class="form-check-label" for="rolls_buns">
+                            Rolls/Buns
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="cake">
+                        <label class="form-check-label" for="cake">
+                            Cake
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="cookies">
+                        <label class="form-check-label" for="cookies">
+                            Cookies
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="pie">
+                        <label class="form-check-label" for="pie">
+                            Pie
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="pastry">
+                        <label class="form-check-label" for="pastry">
+                            Pastry
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="chocolate">
+                        <label class="form-check-label" for="chocolate">
+                            Chocolate
+                        </label>
+                    </div>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="baked_preference">
+                    <label for="baked_preference">Preferences</label>
+                </div>
+            </form>
+            <form class="row row-cols-lg-auto g-3 align-items-center">
+                <label for="oil" class="col-sm-2 col-form-label">Misc Foods:</label>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="oil">
+                        <label class="form-check-label" for="oil">
+                            Oil
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="salt">
+                        <label class="form-check-label" for="salt">
+                            Salt
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="sugar">
+                        <label class="form-check-label" for="sugar">
+                            Sugar
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="cake_mix">
+                        <label class="form-check-label" for="cake_mix">
+                            Cake Mix
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="salsa">
+                        <label class="form-check-label" for="salsa">
+                            Salsa
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="hummus">
+                        <label class="form-check-label" for="hummus">
+                            Hummus
+                        </label>
+                    </div>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="misc_preference">
+                    <label for="misc_preference">Preferences</label>
+                </div>
+            </form>
+            <form class="row row-cols-lg-auto g-3 align-items-center">
+                <label for="instant_formula" class="col-sm-2 col-form-label">Baby/ Toddlers:</label>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="instant_formula">
+                        <label class="form-check-label" for="instant_formula">
+                            Instant Formula
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="infant_puree">
+                        <label class="form-check-label" for="infant_puree">
+                            Infant Puree
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="toddler_food">
+                        <label class="form-check-label" for="toddler_food">
+                            Toddler Food
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="diaper">
+                        <label class="form-check-label" for="diaper">
+                            Diapers
+                        </label>
+                    </div>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="diaper_size">
+                    <label for="diaper_size">Diaper Size</label>
+                </div>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="baby_preference">
+            <label for="baby_preference">Preferences</label>
+        </div>
+        </form>
+        <form class="row row-cols-lg-auto g-3 align-items-center">
+            <label for="pet_food" class="col-sm-2 col-form-label">Pets:</label>
+            <div class="col-12">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="pet_food">
+                    <label class="form-check-label" for="pet_food">
+                        Pet Food
+                    </label>
+                </div>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="pet_type">
+                <label for="pet_type">Type of Pet</label>
+            </div>
+        </form>
+        <form class="row row-cols-lg-auto g-3 align-items-center">
+            <label for="maxi_pads" class="col-sm-2 col-form-label">Hygiene:</label>
+            <div class="col-12">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="maxi_pads">
+                    <label class="form-check-label" for="maxi_pads">
+                        Maxi Pads
+                    </label>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="tampons">
+                    <label class="form-check-label" for="tampons">
+                        Tampons
+                    </label>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="toilet_paper">
+                    <label class="form-check-label" for="toilet_paper">
+                        Toilet Paper
+                    </label>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="soap">
+                    <label class="form-check-label" for="soap">
+                        Soap
+                    </label>
+                </div>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="hygiene_preference">
+                <label for="hygiene_preference">Preferences</label>
+            </div>
+        </form>
+        <div class="mb-3">
+            <label for="notes" class="form-label">Any other notes, requests, or comments for the staff:</label>
+            <textarea class="form-control" id="notes" rows="3"></textarea>
+        </div>
+        </div>
+
+    </main>
+
+
+
+</html>
+<script src="/js/order.js"></script>
