@@ -25,7 +25,8 @@ Client.init(
     },
     email:  {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: false, 
+      unique: true,
       validate:{
         isEmail: true,
       }
@@ -44,18 +45,23 @@ Client.init(
     //Dietary Restrictions
     vegetarian: {
       type: DataTypes.BOOLEAN,
+      defaultValue: false,
     },
     vegan: {
       type: DataTypes.BOOLEAN,
+      defaultValue: false,
     },
     halal:{
       type: DataTypes.BOOLEAN,
+      defaultValue: false,
     },
     kosher: {
       type: DataTypes.BOOLEAN,
+      defaultValue: false,
     },
     glutenFree: {
       type: DataTypes.BOOLEAN,
+      defaultValue: false,
     },
     dietaryRestrictionsOther: {
       type: DataTypes.STRING,
@@ -63,10 +69,13 @@ Client.init(
     //Cooking Access
     cookingAccess:{
       type: DataTypes.BOOLEAN,
+      defaultValue: false,
     },
     microwaveOnly:{
       type: DataTypes.BOOLEAN,
+      defaultValue: false,
     },
+
 
   },
   {
