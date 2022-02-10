@@ -13,6 +13,12 @@ Order.init(
       primaryKey:true,
       autoIncrement:true,
     },
+    inProgress: {
+      type: DataTypes.BOOLEAN,
+    },
+    completed: {
+      type: DataTypes.BOOLEAN,
+    },
     // carry_out
     bag: {
       type: DataTypes.BOOLEAN,
@@ -399,10 +405,7 @@ Order.init(
 
   {
     sequelize,
-    timestamps: false,
-    freezeTableName: true,
-    underscored: true,
-    modelName: 'order',
+    timestamps: true,
   }
 );
 
