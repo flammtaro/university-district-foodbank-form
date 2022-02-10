@@ -7,7 +7,7 @@ class Order extends Model {}
 Order.init(
   {
     // define columns
-    id: {
+    orderId: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey:true,
@@ -32,6 +32,7 @@ Order.init(
     box_quantity: {
       type: DataTypes.INTEGER,
     },
+    // =====================================
     // DRY GOODS
     // grains
     rice: {
@@ -46,7 +47,7 @@ Order.init(
     cereal: {
       type: DataTypes.BOOLEAN,
     },
-        grain_preference: {
+    grain_preference: {
       type: DataTypes.STRING,
     },
     // canned-fruit
@@ -94,7 +95,7 @@ Order.init(
     lentils: {
       type: DataTypes.BOOLEAN,
     },
-    protein_preference: {
+    canned_protein_preference: {
       type: DataTypes.STRING,
     },
     // beverages
@@ -357,7 +358,7 @@ Order.init(
     },
     // ==========================================
     // baby/toddler
-    instant_formula: {
+    formula: {
       type: DataTypes.BOOLEAN,
     },
     infant_puree: {
@@ -366,7 +367,7 @@ Order.init(
     toddler_food: {
       type: DataTypes.BOOLEAN,
     },
-    diaper: {
+    diapers: {
       type: DataTypes.BOOLEAN,
     },
     diaper_size: {
@@ -405,7 +406,10 @@ Order.init(
 
   {
     sequelize,
-    timestamps: true,
+    timestamps: false,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'order',
   }
 );
 
