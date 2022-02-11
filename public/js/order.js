@@ -13,7 +13,7 @@ const loginFormHandler = async function (event) {
     //   }})
 
     // }
-
+    console.log("THIS IS WORKING")
     const bodyObj = {}
     wantedItems.forEach(element => {
         bodyObj[element.id] = true
@@ -26,13 +26,15 @@ const loginFormHandler = async function (event) {
 
     const response = await fetch('/api/order/', {
         method: 'POST',
-        body: JSON.stringify({ bodyObj }),
+        body: JSON.stringify( bodyObj ),
         headers: { 'Content-Type': 'application/json' },
     });
 
     if (response.ok) {
-        document.location.replace('/dashboard');
+        document.location.replace('/login');
     } else {
         alert('Failed to send Order');
     }
 };
+
+submitBtn.addEventListener("click", loginFormHandler);
