@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Order } = require('../../models');
+const { Order } = require('../models');
 
 //TODO: Get Routes to get all orders
 router.get('/admin/viewOrder', async (req, res) => {
