@@ -4,23 +4,8 @@ const { Client } = require('../../models');
 //TODO: Post Route for new Clients
 router.post('/', async (req, res) => {
     try {
-      const newClient = await Client.create({
-        username: req.body.username,
-        password: req.body.password,
-        name: req.body.name,
-        email: req.body.email,
-        householdSize: req.body.householdSize,
-        vegetarian: req.body.vegetarian,
-        vegan: req.body.vegan,
-        halal: req.body.halal,
-        kosher: req.body.kosher,
-        glutenFree: req.body.glutenFree,
-        dietaryRestrictionsOther: req.body.dietaryRestrictionsOther,
-        cookingAccess: req.body.cookingAccess,
-        microwaveOnly: req.body.microwaveOnly,
-
-
-      });
+      const newClient = await Client.create(
+       req.body);
   
       req.session.save(() => {
         req.session.userId = newClient.id;

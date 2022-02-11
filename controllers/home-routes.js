@@ -6,6 +6,11 @@ router.get('/', (req,res)=>{
 
 });
 
+router.get('/new-order', (req,res)=>{
+  res.render('new-order');
+
+});
+
 router.get('/login', (req, res) => {
     if (req.session.loggedIn) {
       res.redirect('/');
