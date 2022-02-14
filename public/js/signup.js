@@ -6,10 +6,13 @@ const signupFormHandler = async function(event) {
 
     const wantedItems = document.querySelectorAll('input[type="checkbox"]:checked')
 
+    const fullNameEl = document.querySelector('#client-full-name');
     const emailEl = document.querySelector('#email-input-signup');
     const passwordEl = document.querySelector('#password-input-signup');
     const houseHoldEl = document.querySelector('#inputSize');
-    const user= {email: emailEl.value,
+    const user= {
+      clientName: fullNameEl.value, 
+      email: emailEl.value,
       password: passwordEl.value,
       householdSize: houseHoldEl.value,}
       wantedItems.forEach(element => {
