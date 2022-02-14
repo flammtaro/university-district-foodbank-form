@@ -1,4 +1,3 @@
-const { DELETE } = require('sequelize/types/query-types');
 const Admin = require('./Admin');
 const Client = require('./Client');
 const Order = require('./Order');

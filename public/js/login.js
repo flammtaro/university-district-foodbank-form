@@ -12,9 +12,12 @@ const loginFormHandler = async function(event) {
       }),
       headers: { 'Content-Type': 'application/json' },
     });
-  
-    if (response.ok) {
-      document.location.replace('/dashboard');
+    if(response.username === "admin" && response.password === "UDFB1920")
+    {
+      document.location.replace('/admin-dashboard');
+    }
+    else if (response.ok) {
+      document.location.replace('/new-order');
     } else {
       alert('Failed to login');
     }
