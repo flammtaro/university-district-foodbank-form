@@ -19,6 +19,10 @@ Client.init(
       primaryKey:true,
       autoIncrement:true,
     },
+    role: {
+      type:DataTypes.STRING,
+      defaultValue: "user",
+    },
     clientName: {
       type: DataTypes.STRING,
       allowNull: true,
