@@ -1,17 +1,17 @@
 const router = require('express').Router();
-const { Order } = require('../models');
+const { Order, Client } = require('../models');
 
 //TODO: Get Routes to get all orders
 router.get('/admin/viewOrder', async (req, res) => {
     try{
-    const orderData = await Order.findAll()
+    const orderData = await Order.findAll({include:[Client]})
     
     const orders = orderData.map((order) => order.get({ plain: true }));
     const simpleOrders = orders.map(obj=>{
       const resObj = {
         foods:[]
       };
-      const toKeep = ["orderId","inProgress","completed","notes",'bag','box',"bag_quantity","box_quantity"];
+      const toKeep = ["Client","orderId","inProgress","completed","notes",'bag','box',"bag_quantity","box_quantity"];
       for(key in obj){
         if(toKeep.includes(key)){
           resObj[key]=obj[key]
@@ -26,7 +26,7 @@ router.get('/admin/viewOrder', async (req, res) => {
       return resObj
     })
     console.log(simpleOrders);
-        res.render('all', { orders:simpleOrders });
+        res.render('admin-dashboard', { orders:simpleOrders });
     } catch (err) {
       console.log(err);
         res.status(500).json(err);
