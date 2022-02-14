@@ -1,6 +1,6 @@
 const submitBtn = document.querySelector('#submit-btn')
 
-const loginFormHandler = async function (event) {
+const orderFormSubmit = async function (event) {
     event.preventDefault();
 
     const wantedItems = document.querySelectorAll('input[type="checkbox"]:checked')
@@ -37,4 +37,4 @@ const loginFormHandler = async function (event) {
     }
 };
 
-submitBtn.addEventListener("click", loginFormHandler);
+submitBtn.addEventListener("click", orderFormSubmit);

@@ -2,7 +2,12 @@ const router = require('express').Router();
 const { Admin, Client, Order } = require('../models/');
 
 router.get('/', (req,res)=>{
-  res.render('test-order');
+  if (req.session.loggedIn) {
+    res.redirect('/new-order');
+    return;
+  }
+
+  res.render('login');
 
 });
 
@@ -13,7 +18,7 @@ router.get('/new-order', (req,res)=>{
 
 router.get('/login', (req, res) => {
     if (req.session.loggedIn) {
-      res.redirect('/');
+      res.redirect('/new-order');
       return;
     }
   
