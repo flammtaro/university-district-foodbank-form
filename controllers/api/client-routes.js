@@ -23,7 +23,7 @@ router.post('/login', async (req, res) => {
     try {
       const client = await Client.findOne({
         where: {
-          username: req.body.username,
+          email: req.body.email,
         },
       });
   
@@ -41,12 +41,14 @@ router.post('/login', async (req, res) => {
   
       req.session.save(() => {
         req.session.userId = client.id;
-        req.session.username = client.username;
+        req.session.email = client.email;
+        req.session.role = client.role;
         req.session.loggedIn = true;
   
         res.json({ client, message: 'You are now logged in!' });
       });
     } catch (err) {
+
       res.status(400).json({ message: 'No client account found!' });
     }
   });

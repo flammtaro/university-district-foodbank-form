@@ -1,8 +1,10 @@
 const router = require('express').Router();
 const { Order, Client } = require('../models');
+const { withAuth, authAdmin} = require('../utils/auth')
 
 //TODO: Get Routes to get all orders
-router.get('/admin/viewOrder', async (req, res) => {
+router.get('/admin/viewOrder', withAuth, authAdmin, async (req, res) => {
+  
     try{
     const orderData = await Order.findAll({include:[Client]})
     
