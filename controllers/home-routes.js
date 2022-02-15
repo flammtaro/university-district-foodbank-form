@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Admin, Client, Order } = require("../models/");
+const { Client, Order } = require("../models/");
 
 router.get("/", (req, res) => {
   if (req.session.loggedIn) {
