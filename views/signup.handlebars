@@ -16,13 +16,12 @@
         <label for="password-input-signup">Password</label>
         <input type="password" id="password-input-signup" />
       </div>
-      <button type="submit" id="signup-btn" class="btn" >Signup!</button>
-      <a href="/login">Login instead</a>
+
     </form>
 
 {{!-- household size --}}
 <div class="col-md-6">
-    <label for="inputSize" class="form-label">House-hold Size</label>
+    <label for="inputSize" class="form-label" id="household-size">House-hold Size</label>
     <input type="number" class="form-control" id="inputSize">
   </div>
   {{!-- cooking access --}}
@@ -67,9 +66,12 @@
     I need gluten-free foods.
     </label>
   </div>
+  <br>
   <div class="col-12">
-    <button type="submit" class="btn btn-primary" id = "signUpBtn">Sign Up</button>
+    <button type="submit" class="btn btn-success" id = "signUpBtn">Sign Up</button>
+    <button type="submit" class="btn btn-primary" id = "loginBtn">Login</button>
   </div>
+
 
 
 
