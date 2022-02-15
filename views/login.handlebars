@@ -4,15 +4,18 @@
   </div>
   <form id="login-form" class="card-body">
     <div>
-      <label for="email-input-login">Email</label>
+      <label for="email-input-login" id="email-label">Email</label>
       <input type="text" id="email-input-login" />
     </div>
     <div>
-      <label for="password-input-login" class="form-label">Password</label>
+      <label for="password-input-login" class="form-label" id="password-label">Password</label>
       <input type="password" id="password-input-login" />
     </div>
-    <button type="submit" id="login-btn" class="btn">Login!</button>
-    <a type="button" href="/signup">Sign up instead</a>
+    <br>
+  <div class="col-12" id="login-buttons">
+    <button type="submit" class="btn btn-primary" id = "loginBtn">Login</button>
+    <button type="submit" class="btn btn-success" id = "signUpBtn">Sign Up</button>
+  </div>
   </form>
 </div>
 
