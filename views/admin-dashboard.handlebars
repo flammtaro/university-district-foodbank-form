@@ -28,8 +28,13 @@
          {{/each}}
       <button type="button" class="btn btn-outline-delete" data-orderId={{id}} id="deleteBtn">Delete</button>
      </div>
-
 </div>
 {{/each}}
+
+<div class="input-group">
+  <span class="input-group-text">Add specials</span>
+  <textarea class="form-control" aria-label="specials"></textarea>
+  <button class="btn-primary" type="submit" id= "specialsBtn" value="Submit"></button>
+</div>
 
 <script src="/js/admin.js"></script>

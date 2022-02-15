@@ -1,5 +1,4 @@
-const deleteBtns = document.querySelectorAll('.btn-outline-delete')
-
+const deleteBtns = document.querySelectorAll('.btn-outline-delete');
 
 deleteBtns.forEach(button => {
     button.addEventListener("click", e =>{
@@ -13,3 +12,8 @@ deleteBtns.forEach(button => {
         });
     })
 });
+
+const  specialsInput = document.querySelector(".form-control");
+const  specialsBtn = document.querySelector("#specialsBtn");
+
+specialsBtn.addEventListener("click", )

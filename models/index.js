@@ -1,4 +1,4 @@
-const Admin = require('./Admin');
+const Special = require('./Specials');
 const Client = require('./Client');
 const Order = require('./Order');
 
@@ -11,7 +11,7 @@ Client.hasMany(Order, {
 Order.belongsTo(Client);
 
 module.exports = {
-    Admin,
+    Special,
     Client,
     Order,
   };
