@@ -1,32 +1,38 @@
 {{#each orders}}
 <div class="card">
   <div class="card-header">
-    <h2>{{Client.clientName}}</h2>
+    <h2>
+      <span class="smallerFont">Order for:</span>
+      <span class="largerFont">{{Client.clientName}}</span>
+      </h2>
   </div>
      <div class="card-body">
+       <ul>
        <p>{{notes}}</p>
        {{#if bag}}
-       <p>Bags</p>
+       <li>Bags</li>
        {{/if}}
        {{#if box}}
-       <p>Boxes</p>
+       <li>Boxes</li>
        {{/if}}
        {{#if box_quantity}}
-       <p>Can carry {{box_quantity}} Boxes</p>
+       <li>Can carry {{box_quantity}} Boxes</li>
        {{/if}}
        {{#if bag_quantity}}
-       <p>Can carry {{bag_quantity}} bags</p>
+       <li>Can carry {{bag_quantity}} bags</li>
        {{/if}}
 
        {{#each foods as |food|}}
-         <p>{{food}}</p>
+         <li>{{food}}</li>
          {{/each}}
        {{#each preferences as |preference|}}
        {{#if preference.value}}
-         <p>{{preference.name}}: {{preference.value}}</p>
+         <li>{{preference.name}}: {{preference.value}}</li>
          {{/if}}
          {{/each}}
-      <button type="button" class="btn btn-outline-delete" data-orderId={{id}} id="deleteBtn">Delete</button>
+       </ul>
+
+      <button type="button" class="btn btn-outline-delete btn-danger" data-orderId={{id}} id="deleteBtn">Delete</button>
      </div>
 </div>
 {{/each}}
