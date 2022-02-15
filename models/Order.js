@@ -7,12 +7,7 @@ class Order extends Model {}
 Order.init(
   {
     // define columns
-    orderId: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      primaryKey:true,
-      autoIncrement:true,
-    },
+   
     inProgress: {
       type: DataTypes.BOOLEAN,
       defaultValue: false,
@@ -501,11 +496,7 @@ Order.init(
   },
 
   {
-    sequelize,
-    timestamps: false,
-    freezeTableName: true,
-    underscored: true,
-    modelName: 'order',
+    sequelize
   }
 );
 

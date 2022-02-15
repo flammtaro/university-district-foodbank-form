@@ -1,7 +1,7 @@
 {{#each orders}}
 <div class="card">
   <div class="card-header">
-    <h2>{{Client}}</h2>
+    <h2>{{Client.clientName}}</h2>
   </div>
      <div class="card-body">
        <p>{{notes}}</p>
@@ -26,7 +26,7 @@
          <p>{{preference.name}}: {{preference.value}}</p>
          {{/if}}
          {{/each}}
-      <button type="button" class="btn btn-outline-delete" id="deleteBtn">Delete</button>
+      <button type="button" class="btn btn-outline-delete" data-orderId={{id}} id="deleteBtn">Delete</button>
      </div>
 
 </div>

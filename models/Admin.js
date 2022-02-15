@@ -12,13 +12,7 @@ class Admin extends Model {
 Admin.init(
   {
     // define columns
-    id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      primaryKey:true,
-      autoIncrement:true,
-    },
-    username: {
+      username: {
       type: DataTypes.STRING,
       allowNull: false,
     },
