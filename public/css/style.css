@@ -30,6 +30,13 @@ a:visited {
   .nav-list{
       float:right;
   }
+  /* New Order CSS */
+  .new-order{
+      padding-left:20px;
+  }
+  .new-order-smaller{
+    padding-left:10px;
+  }
 /* Login Page CSS */
 #login-form{
     display: flex;
@@ -86,4 +93,9 @@ a:visited {
 }
 #household-size{
     font-weight: bold;
+}
+#processing-h3{
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
