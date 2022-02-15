@@ -9,9 +9,11 @@ router.get('/admin/viewOrder', withAuth, authAdmin, async (req, res) => {
     const orderData = await Order.findAll({include:[Client]})
     
     const orders = orderData.map((order) => order.get({ plain: true }));
+    console.log(orders)
     const simpleOrders = orders.map(obj=>{
       const resObj = {
-        foods:[]
+        foods:[],
+        preferences:[]
       };
       const toKeep = ["Client","orderId","inProgress","completed","notes",'bag','box',"bag_quantity","box_quantity"];
       for(key in obj){
@@ -20,6 +22,12 @@ router.get('/admin/viewOrder', withAuth, authAdmin, async (req, res) => {
         }
        else if(obj[key]===true){
           resObj.foods.push(key)
+        }
+       else if(key.includes('preference')){
+        const prefObj = {} 
+        prefObj.value = obj[key]?.length ? obj[key] : null
+        prefObj.name=key
+        resObj.preferences.push(prefObj)
         }
         else if(obj[key]){
         resObj[key]=obj[key]
@@ -46,6 +54,7 @@ router.get('/order/:id', async (req, res) => {
         const order = orderData.get({ plain: true });
         res.render('order', order);
       } catch (err) {
+        console.log(err)
           res.status(500).json(err);
       };     
 });

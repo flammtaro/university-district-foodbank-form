@@ -4,6 +4,7 @@ const Order = require('./Order');
 
 
 Client.hasMany(Order, {
+  // foreignKey: 'clientId',
   onDelete: "CASCADE"
 });
 

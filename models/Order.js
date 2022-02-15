@@ -483,16 +483,16 @@ Order.init(
     // ============================
     // hygiene 
     maxi_pads: {
-      type: DataTypes.STRING,
+      type: DataTypes.BOOLEAN,
     },
     toilet_paper: {
-      type: DataTypes.STRING,
+      type: DataTypes.BOOLEAN,
     },
     tampons: {
-      type: DataTypes.STRING,
+      type: DataTypes.BOOLEAN,
     },
     soap: {
-      type: DataTypes.STRING,
+      type: DataTypes.BOOLEAN,
     },
     hygiene_preference: {
       type: DataTypes.STRING,

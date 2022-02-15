@@ -11,10 +11,11 @@ router.post('/', async (req, res) => {
         req.session.userId = newClient.id;
         req.session.username = newClient.username;
         req.session.loggedIn = true;
-  
+        req.session.name = newClient.clientName
         res.json(newClient);
       });
     } catch (err) {
+      console.log(err)
       res.status(500).json(err);
     }
   });
@@ -44,11 +45,12 @@ router.post('/login', async (req, res) => {
         req.session.email = client.email;
         req.session.role = client.role;
         req.session.loggedIn = true;
+        req.session.name = client.clientName
   
         res.json({ client, message: 'You are now logged in!' });
       });
     } catch (err) {
-
+      console.log(err)
       res.status(400).json({ message: 'No client account found!' });
     }
   });
@@ -59,6 +61,7 @@ router.post('/logout', (req, res) => {
         res.status(204).end();
       });
     } else {
+      console.log(err)
       res.status(404).end();
     }
   });
