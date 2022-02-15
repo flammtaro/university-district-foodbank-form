@@ -80,7 +80,7 @@ router.put('/:id', (req, res) => {
 router.delete('/:id', (req, res) => {
     Order.destroy({
       where: {
-        orderId,
+        id:req.params.id,
       },
     })
       .then((deletedOrder) => {

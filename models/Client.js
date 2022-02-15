@@ -13,12 +13,7 @@ Client.init(
   {
     // define columns
     //Account Info
-    id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      primaryKey:true,
-      autoIncrement:true,
-    },
+   
     role: {
       type:DataTypes.STRING,
       defaultValue: "user",

@@ -1,8 +1,15 @@
-const deleteBtn = document.querySelector('#deleteBtn')
+const deleteBtns = document.querySelectorAll('.btn-outline-delete')
 
-const deleteOrder = async function (event) {
-    event.preventDefault();
-    console.log("you've been deleted")
-};
 
-deleteBtn.addEventListener("click", deleteOrder);
+deleteBtns.forEach(button => {
+    button.addEventListener("click", e =>{
+        console.log(e.target)
+        fetch(`/user/${e.target.dataset.orderid}`, {method:"DELETE"})
+        .then(res=>{
+            if (res.ok){location.reload()
+            } else {
+                alert("Failed to delete.")
+            };
+        });
+    })
+});

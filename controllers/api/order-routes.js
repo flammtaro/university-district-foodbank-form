@@ -5,7 +5,7 @@ router.post('/', async (req,res) => {
     try {
         console.log('=======================================')
         console.log(req.session)
-        const orderData = await Order.create({...req.body, ClientId:req.session.clientId, client_id:req.session.clientId});
+        const orderData = await Order.create({...req.body, ClientId:req.session.userId});
 
         const order = orderData.get({ plain: true });
         // res.render('new-order', order);
