@@ -1,3 +1,4 @@
+const loginBtn = document.querySelector('#loginBtn')
 
 const loginFormHandler = async function(event) {
     event.preventDefault();
@@ -22,9 +23,15 @@ const loginFormHandler = async function(event) {
     } else {location.href ="/"}
     console.log(adminData);
 };
+
+loginBtn.addEventListener("click", loginFormHandler);
+  // document
+  //   .querySelector('#login-form')
+  //   .addEventListener('submit', loginFormHandler);
+  //   // console.log("button-works")
+    
+// document.getElementById("signUpBtn").onclick = function(){
+//   console.log("sign up")
+//   window.location.replace('/');
   
-  document
-    .querySelector('#login-form')
-    .addEventListener('submit', loginFormHandler);
-    // console.log("button-works")
-  
+// };
