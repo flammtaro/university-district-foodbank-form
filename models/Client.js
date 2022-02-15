@@ -25,7 +25,7 @@ Client.init(
     },
     clientName: {
       type: DataTypes.STRING,
-      allowNull: true,
+      allowNull: false,
     },
     email:  {
       type: DataTypes.STRING,
