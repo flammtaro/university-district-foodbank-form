@@ -1,6 +1,7 @@
 const Special = require('./Specials');
-const Client = require('./Client');
 const Order = require('./Order');
+const Client = require('./Client');
+
 
 
 Client.hasMany(Order, {
