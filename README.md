@@ -35,3 +35,7 @@ https://udfb-helping-hand.herokuapp.com/
 ![load page](/public/images/UDFB.gif)
  
 ## License
+MIT License [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+Copyright (c) 2021
+All rights reserved.
