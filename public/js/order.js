@@ -31,7 +31,7 @@ const orderFormSubmit = async function (event) {
     });
 
     if (response.ok) {
-        document.location.replace('/login');
+        document.location.replace('/processing');
     } else {
         alert('Failed to send Order');
     }

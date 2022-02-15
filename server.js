@@ -22,6 +22,8 @@ const hbs = exphbs.create({});
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
+app.use(express.static("images"));
+
 app.use(session({
     secret: 'keyboard cat',
     resave: false,
@@ -36,6 +38,10 @@ app.use(session({
 
 app.use('/',allRoutes);
 
+
+app.get("/images", (req, res) => {
+  res.render("images");
+});
 
 // nodemailer==========================================================
 // let transporter = nodemailer.createTransport(transport[ defaults])
