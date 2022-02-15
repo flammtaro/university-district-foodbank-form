@@ -1,10 +1,32 @@
-{{#each order}}
+{{#each orders}}
 <div class="card">
   <div class="card-header">
-    <h2>Admin Dashboard</h2>
+    <h2>{{Client}}</h2>
   </div>
      <div class="card-body">
-         <p>{{this}}</p>
+       <p>{{notes}}</p>
+       {{#if bag}}
+       <p>Bags</p>
+       {{/if}}
+       {{#if box}}
+       <p>Boxes</p>
+       {{/if}}
+       {{#if box_quantity}}
+       <p>Can carry {{box_quantity}} Boxes</p>
+       {{/if}}
+       {{#if bag_quantity}}
+       <p>Can carry {{bag_quantity}} bags</p>
+       {{/if}}
+
+       {{#each foods as |food|}}
+         <p>{{food}}</p>
+         {{/each}}
+       {{#each preferences as |preference|}}
+       {{#if preference.value}}
+         <p>{{preference.name}}: {{preference.value}}</p>
+         {{/if}}
+         {{/each}}
+
      </div>
 
 </div>

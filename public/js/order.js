@@ -19,9 +19,9 @@ const orderFormSubmit = async function (event) {
         bodyObj[element.id] = true
     })
     preferences.forEach(element => {
-        if (element.value) {
+        
             bodyObj[element.id] = element.value
-        }
+        
     })
 
     const response = await fetch('/api/order/', {
