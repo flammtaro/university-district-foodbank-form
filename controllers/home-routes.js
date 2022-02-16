@@ -3,9 +3,6 @@ const { Client, Order } = require("../models/");
 
 router.get("/", (req, res) => {
   if (req.session.loggedIn) {
-    if (condition) {
-      
-    }
     res.redirect("/new-order");
     return;
   }
