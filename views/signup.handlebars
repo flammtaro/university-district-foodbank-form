@@ -22,7 +22,7 @@
 {{!-- household size --}}
 <div class="col-md-6">
     <label for="inputSize" class="form-label" id="household-size">House-hold Size</label>
-    <input type="number" class="form-control" id="inputSize">
+    <input type="number" min="1" value= "1" onclick="this.select();" class="form-control" id="inputSize">
   </div>
   {{!-- cooking access --}}
   <div class="form-check">
