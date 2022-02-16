@@ -37,7 +37,7 @@ specialsBtn.addEventListener("click", (es) => {
     if (res.ok) {
       location.reload();
     } else {
-      alert("Failed to delete.");
+      console.log("Failed to delete.");
     }
   });
 });
