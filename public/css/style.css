@@ -37,6 +37,11 @@ a:visited {
   .new-order-smaller{
     padding-left:10px;
   }
+  /* Safety Reminder */
+#covidSafety{
+    text-align: center;
+    color: rgb(184, 47, 37);
+}
 /* Login Page CSS */
 #login-form{
     display: flex;
