@@ -21,15 +21,15 @@ Express, Bcrypt, Dotenv, Nodemailer, Mysql, Sequelize
 - The client will need to select which groceries they would like and then submit their order.
 
 ## Contributors:
--Denise Arevalo
--Reid Flamm
--Spencer Nelson
+- Denise Arevalo
+- Reid Flamm
+- Spencer Nelson
 
 ## Questions???
 If you would like to contribute or have questions please email us and we will get back to you as soon as we are able.
--Denise: deniwonder8@gmail.com
--Reid: reidsomersflamm@gmail.com
--Spencer: srn314@gmail.com
+- Denise: deniwonder8@gmail.com
+- Reid: reidsomersflamm@gmail.com
+- Spencer: srn314@gmail.com
 
 ## Link
 https://udfb-helping-hand.herokuapp.com/
