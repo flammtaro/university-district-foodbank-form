@@ -3,8 +3,31 @@
   <div class="card-header">
     <h2>
       <span class="smallerFont">Order for:</span>
-      <span class="largerFont">{{Client.clientName}}</span>
+      <span class="largerFont">{{Client.clientName}} for {{Client.householdSize}}</span>
       </h2>
+      <p>
+        {{#if Client.vegetarian}}
+       <span>Vegetarian,</span>
+       {{/if}}
+       {{#if Client.vegan}}
+       <span>Vegan,</span>
+       {{/if}}
+       {{#if Client.halal}}
+       <span>Halal,</span>
+       {{/if}}
+       {{#if Client.kosher}}
+       <span>Kosher,</span>
+       {{/if}}
+       {{#if Client.glutenFree}}
+       <span>Gluten Free,</span>
+       {{/if}}
+       {{#if Client.cookingAccess}}
+       <span>Has Cooking Access,</span>
+       {{/if}}
+       {{#if Client.microwaveOnly}}
+       <span>Microwave Only,</span>
+       {{/if}}
+      </p>
   </div>
      <div class="card-body">
        <ul>
