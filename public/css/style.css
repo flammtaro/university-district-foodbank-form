@@ -1,0 +1,106 @@
+* {
+    font-family: 'Roboto Serif', sans-serif;
+}
+
+body {
+    background-color: rgb(211, 218, 218);
+}
+footer {
+    text-align: center;
+}
+section {
+    text-align: center;
+    margin: 10px;
+}
+a:link{
+    color:black;
+    background-color: transparent;
+    text-decoration: none;
+}
+a:visited {
+    color: rgb(80, 80, 80);
+    background-color: transparent;
+    text-decoration: none;
+  }
+  a:hover {
+    color: rgb(73, 73, 73);
+    background-color: transparent;
+    text-decoration: underline;
+  }
+  .nav-list{
+      float:right;
+  }
+  /* New Order CSS */
+  .new-order{
+      padding-left:20px;
+  }
+  .new-order-smaller{
+    padding-left:10px;
+  }
+  /* Safety Reminder */
+#covidSafety{
+    text-align: center;
+    color: rgb(184, 47, 37);
+}
+/* Login Page CSS */
+#login-form{
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    margin-left: 10px;
+    font-weight: bold;
+}
+#email-label{
+    height: 25px;
+    flex: 0 0 200px;
+    margin-left: 10px;
+    padding-top:5px;
+}
+#email-input-login{
+    margin-left: 31px;
+}
+#password-label{
+    height: 25px;
+    flex: 0 0 200px;
+    margin-left: 10px;
+    padding-top:5px;
+}
+#login-buttons{
+    text-align: center;
+}
+/* Sign Up Page CSS */
+#signup{
+    margin:25px;
+}
+#signup-form{
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    font-weight: bold;
+}
+#client-full-name{
+    height: 25px;
+    flex: 0 0 200px;
+    margin-left: 10px;
+    padding-top:5px;
+}
+#email-input-signup{
+    height: 25px;
+    flex: 0 0 200px;
+    margin-left: 46.5px;
+    padding-top:5px;
+}
+#password-input-signup{
+    height: 25px;
+    flex: 0 0 200px;
+    margin-left: 15px;
+    padding-top:5px;
+}
+#household-size{
+    font-weight: bold;
+}
+#processing-h3{
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}

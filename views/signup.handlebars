@@ -1,0 +1,78 @@
+<div class="card">
+  <div class="card-header">
+    <h2>Sign Up</h2>
+  </div>
+  <div id="signup">
+    <form id="signup-form" class="card-body">
+          <div>
+        <label for="client-full-name">Full Name</label>
+        <input type="text" id="client-full-name" />
+      </div>
+      <div>
+        <label for="email-input-signup">Email</label>
+        <input type="text" id="email-input-signup" />
+      </div>
+      <div>
+        <label for="password-input-signup">Password</label>
+        <input type="password" id="password-input-signup" />
+      </div>
+
+    </form>
+
+{{!-- household size --}}
+<div class="col-md-6">
+    <label for="inputSize" class="form-label" id="household-size">House-hold Size</label>
+    <input type="number" min="1" value= "1" onclick="this.select();" class="form-control" id="inputSize">
+  </div>
+  {{!-- cooking access --}}
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="cookingCondition">
+    <label class="form-check-label" for="cookingCondition">
+    I have ability to cook.
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="microwaveOnly">
+    <label class="form-check-label" for="microwaveOnly">
+    I can only microwave food.
+    </label>
+  </div>
+{{!-- diet restrictions --}}
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="vegetarian">
+    <label class="form-check-label" for="vegetarian">
+    I need vegetarian foods.
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="vegan">
+    <label class="form-check-label" for="vegan">
+    I need vegan foods.
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="halal">
+    <label class="form-check-label" for="halal">
+    I need halal foods.
+    </label>
+  </div>
+    <input class="form-check-input" type="checkbox" value="" id="kosher">
+    <label class="form-check-label" for="kosher">
+    I need kosher foods.
+    </label>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="glutenFree">
+    <label class="form-check-label" for="glutenFree">
+    I need gluten-free foods.
+    </label>
+  </div>
+  <br>
+  <div class="col-12">
+    <button type="submit" class="btn btn-success" id = "signUpBtn">Sign Up</button>
+    <button type="submit" class="btn btn-primary" id = "loginBtn">Login</button>
+  </div>
+
+
+
+
+<script src="/js/signup.js"></script>
