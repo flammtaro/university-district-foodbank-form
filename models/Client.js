@@ -46,6 +46,10 @@ Client.init(
       type: DataTypes.BOOLEAN,
       defaultValue: false,
     },
+    soft: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false,
+    },
     vegan: {
       type: DataTypes.BOOLEAN,
       defaultValue: false,
@@ -62,7 +66,7 @@ Client.init(
       type: DataTypes.BOOLEAN,
       defaultValue: false,
     },
-    dietaryRestrictionsOther: {
+    otherRestrictions: {
       type: DataTypes.STRING,
     },
     //Cooking Access
