@@ -1,6 +1,7 @@
 <div class="post card">
     <div class="card-header">
         <h2>Create New Order</h2>
+        <h3>NOTE: There are currently {{count}} orders in the queue.  Expected wait time: {{hours}} hours {{minutes}} minutes</h3>
     </div>
     <form class="row row-cols-lg-auto g-3 align-items-center new-order">
             <label for="bag" class="col-sm-2 col-form-label">What can you carry with you today? (leave blank if any)</label>
@@ -21,11 +22,11 @@
                 </div>
             </div>
             <div class="form-floating mb-3">
-                <input type="number" min="0" class="form-control" id="bag_quantity">
+                <input type="number" min="0" class="form-control" id="bag_quantity" value="0">
                 <label for="bag_quantity">No. of Bags</label>
             </div>
             <div class="form-floating mb-3">
-                <input type="number" min="0" class="form-control" id="box_quantity">
+                <input type="number" min="0" class="form-control" id="box_quantity" value="0">
                 <label for="floatingInput">No. of Boxes</label>
             </div>
         </form>

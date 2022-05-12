@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Order, Client } = require('../models');
+const { Order, Client,Feedback } = require('../models');
 const { withAuth, authAdmin} = require('../utils/auth')
 
 //TODO: Get Routes to get all orders
@@ -33,6 +33,7 @@ router.get('/admin/viewOrder', withAuth, authAdmin, async (req, res) => {
         resObj[key]=obj[key]
         }
       }
+      resObj.hasOtherRestrictions = obj.Client.otherRestrictions?true:false
       return resObj
     })
     console.log(simpleOrders);
@@ -42,6 +43,18 @@ router.get('/admin/viewOrder', withAuth, authAdmin, async (req, res) => {
         res.status(500).json(err);
     };     
 });
+
+router.get("/admin/feedback",withAuth,authAdmin,async (req,res)=>{
+  try {
+    const feedbacks = await Feedback.findAll()
+    const hbsFeed = feedbacks.map(fb=>fb.get({plain:true})).reverse()
+    res.render("feedback",{feedbacks:hbsFeed})
+  } catch (err) {
+    console.log(err)
+    res.status(500).json(err);
+  }
+  
+})
 
 //TODO: Get Route to get an individual order (by ID?)
 router.get('/order/:id', async (req, res) => {
@@ -59,7 +72,7 @@ router.get('/order/:id', async (req, res) => {
       };     
 });
 //TODO: PUT and DELETE route for order processing status
-router.put('/:id', (req, res) => {
+router.put('/:id',withAuth,authAdmin, (req, res) => {
     Order.update(
       {
         inProgress,
@@ -77,7 +90,7 @@ router.put('/:id', (req, res) => {
 });
   
   
-router.delete('/:id', (req, res) => {
+router.delete('/:id',withAuth,authAdmin, (req, res) => {
     Order.destroy({
       where: {
         id:req.params.id,

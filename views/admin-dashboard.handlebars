@@ -1,11 +1,14 @@
 {{#each orders}}
-<div class="card">
+<div class="card order-card">
   <div class="card-header">
     <h2>
       <span class="smallerFont">Order for:</span>
       <span class="largerFont">{{Client.clientName}} - {{Client.householdSize}} person(s) in the house hold.</span>
       </h2>
       <p>
+        {{#if Client.soft}}
+       <span>Soft,</span>
+       {{/if}}
         {{#if Client.vegetarian}}
        <span>Vegetarian,</span>
        {{/if}}
@@ -27,6 +30,9 @@
        {{#if Client.microwaveOnly}}
        <span>Microwave Only,</span>
        {{/if}}
+       {{#if hasOtherRestrictions}}
+       <span>Other Restrictions: {{Client.otherRestrictions}}</span>
+       {{/if}}
       </p>
   </div>
      <div class="card-body">
@@ -44,6 +50,7 @@
        {{#if bag_quantity}}
        <li>Can carry {{bag_quantity}} bags</li>
        {{/if}}
+      
 
        {{#each foods as |food|}}
          <li>{{food}}</li>
@@ -55,16 +62,17 @@
          {{/each}}
        </ul>
 
-      <button type="button" class="btn btn-outline-delete btn-danger" data-orderId={{id}} id="deleteBtn">Delete</button>
+      <button type="button" class="btn btn-outline-delete btn-danger" data-orderId={{id}} >Delete</button>
+      <button type="button" class="btn  btn-info print-button" data-orderId={{id}} >Print</button>
      </div>
 </div>
 {{/each}}
 
 
-<div class="input-group">
+{{!-- <div class="input-group">
   <input type="text" class="form-control" placeholder="Add specials" aria-label="specials">
   <button class="btn btn-outline-secondary" id= "specialsBtn" type="button">Submit Specials</button>
   
-</div>
+</div> --}}
 
 <script src="/js/admin.js"></script>
