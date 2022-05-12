@@ -104,3 +104,15 @@ a:visited {
     margin-top: 50px;
     margin-bottom: 50px;
 }
+
+@media print {
+    header,footer,section, .order-card,ul.nav{
+      display: none;
+    }
+    .print-selected{
+        display:block
+    }
+    button,.btn {
+        display: none;
+    }
+}

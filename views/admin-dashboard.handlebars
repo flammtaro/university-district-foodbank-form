@@ -1,5 +1,5 @@
 {{#each orders}}
-<div class="card">
+<div class="card order-card">
   <div class="card-header">
     <h2>
       <span class="smallerFont">Order for:</span>
@@ -62,7 +62,8 @@
          {{/each}}
        </ul>
 
-      <button type="button" class="btn btn-outline-delete btn-danger" data-orderId={{id}} id="deleteBtn">Delete</button>
+      <button type="button" class="btn btn-outline-delete btn-danger" data-orderId={{id}} >Delete</button>
+      <button type="button" class="btn  btn-info print-button" data-orderId={{id}} >Print</button>
      </div>
 </div>
 {{/each}}
