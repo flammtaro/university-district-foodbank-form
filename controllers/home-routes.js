@@ -3,9 +3,12 @@ const { Client, Order } = require("../models/");
 const {withAuth} = require("../utils/auth")
 
 router.get("/", (req, res) => {
-  if (req.session.loggedIn) {
-    res.redirect("/new-order");
+  if (req.session.loggedIn && req.session.role==="admin") {
+    res.redirect("/admin/viewOrder");
     return;
+  }
+  if(req.session.loggedIn){
+    return res.redirect("/new-order")
   }
   res.render("login");
 });
@@ -35,6 +38,10 @@ router.get("/login", (req, res) => {
 });
 
 router.get("/signup", (req, res) => {
+  if (req.session.loggedIn && req.session.role==="admin") {
+    res.redirect("/admin/viewOrder");
+    return;
+  }
   if (req.session.loggedIn) {
     res.redirect("/");
     return;
@@ -44,6 +51,10 @@ router.get("/signup", (req, res) => {
 });
 
 router.get("/processing", (req, res) => {
+  if (req.session.loggedIn && req.session.role==="admin") {
+    res.redirect("/admin/viewOrder");
+    return;
+  }
   res.render("processing");
 });
 
