@@ -66,4 +66,10 @@ router.post('/logout', (req, res) => {
       res.status(404).end();
     }
   });
+
+  router.get("/",(req,res)=>{
+    Client.findAll().then(data=>{
+      res.json(data);
+    })
+  })
 module.exports = router;
