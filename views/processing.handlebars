@@ -1,13 +1,64 @@
-
 <div class="card">
-    <div class="card-body">
-        <h3 id="processing-h3">Order is in processing...</h3>
-    </div>
-    <section>
+  <div class="card-body">
+    <h3 id="processing-h3">Order is in processing...</h3>
+     <p>
+        {{#if Client.soft}}
+       <span>Soft,</span>
+       {{/if}}
+        {{#if Client.vegetarian}}
+       <span>Vegetarian,</span>
+       {{/if}}
+       {{#if Client.vegan}}
+       <span>Vegan,</span>
+       {{/if}}
+       {{#if Client.halal}}
+       <span>Halal,</span>
+       {{/if}}
+       {{#if Client.kosher}}
+       <span>Kosher,</span>
+       {{/if}}
+       {{#if Client.glutenFree}}
+       <span>Gluten Free,</span>
+       {{/if}}
+       {{#if Client.cookingAccess}}
+       <span>Has Cooking Access,</span>
+       {{/if}}
+       {{#if Client.microwaveOnly}}
+       <span>Microwave Only,</span>
+       {{/if}}
+       {{#if hasOtherRestrictions}}
+       <span>Other Restrictions: {{Client.otherRestrictions}}</span>
+       {{/if}}
+    <ul>
+      <p>{{notes}}</p>
+      {{#if bag}}
+      <li>Bags</li>
+      {{/if}}
+      {{#if box}}
+      <li>Boxes</li>
+      {{/if}}
+      {{#if box_quantity}}
+      <li>Can carry {{box_quantity}} Boxes</li>
+      {{/if}}
+      {{#if bag_quantity}}
+      <li>Can carry {{bag_quantity}} bags</li>
+      {{/if}}
+      {{#each foods as |food|}}
+      <li>{{food}}</li>
+      {{/each}}
+      {{#each preferences as |preference|}}
+      {{#if preference.value}}
+      <li>{{preference.name}}: {{preference.value}}</li>
+      {{/if}}
+      {{/each}}
+    </ul>
+  </div>
+  <section>
+
     <h5 id="covidSafety">
       Just a friendly reminder to all that face masks are still required at our check-in and distribution windows.
-We encourage mask wearing during all times while waiting for your groceries too. Thanks for helping to keep us all safe. 
+      We encourage mask wearing during all times while waiting for your groceries too. Thanks for helping to keep us all
+      safe.
     </h5>
   </section>
 </div>
-

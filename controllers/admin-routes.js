@@ -37,7 +37,11 @@ router.get('/admin/viewOrder', withAuth, authAdmin, async (req, res) => {
       return resObj
     })
     console.log(simpleOrders);
-        res.render('admin-dashboard', { orders:simpleOrders });
+        res.render('admin-dashboard', {
+           orders:simpleOrders ,
+           loggedIn:req.session.loggedIn?true:false,
+          isAdmin:req.session.role==="admin"?true:false
+        });
     } catch (err) {
       console.log(err);
         res.status(500).json(err);
@@ -48,7 +52,11 @@ router.get("/admin/feedback",withAuth,authAdmin,async (req,res)=>{
   try {
     const feedbacks = await Feedback.findAll()
     const hbsFeed = feedbacks.map(fb=>fb.get({plain:true})).reverse()
-    res.render("feedback",{feedbacks:hbsFeed})
+    res.render("feedback",{
+      feedbacks:hbsFeed,
+      loggedIn:req.session.loggedIn?true:false,
+    isAdmin:req.session.role==="admin"?true:false
+    })
   } catch (err) {
     console.log(err)
     res.status(500).json(err);

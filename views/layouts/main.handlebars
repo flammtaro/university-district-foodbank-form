@@ -18,15 +18,30 @@
 <body>
   <nav class="navbar navbar-expand-lg navbar-light bg light justify-content-end">
     <ul class="nav justify-content-end">
+      {{#if loggedIn}}
+      {{#if isAdmin}}
+      <li class="nav-item">
+        <a class="nav-link" href="/admin/viewOrder">Orders</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/admin/feedback">Feedback</a>
+      </li>
+      {{else}}
+       <li class="nav-item">
+        <a class="nav-link" href="/new-order">New Order</a>
+      </li>
+      {{/if}}
+      <li class="nav-item">
+        <a class="nav-link" href="#" id="logout-link">Logout</a>
+      </li>
+      {{else}}
       <li class="nav-item">
         <a class="nav-link" href="/login">Login</a>
       </li>
         <li class="nav-item">
         <a class="nav-link" href="/signup">Sign Up</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#" id="logout-link">Logout</a>
-      </li>
+      {{/if}}
     </ul>
   </nav>
 

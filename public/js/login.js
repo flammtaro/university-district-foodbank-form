@@ -14,6 +14,9 @@ const loginFormHandler = async function(event) {
       }),
       headers: { 'Content-Type': 'application/json' },
     });
+    if(!response.ok){
+      alert("invalid email/password combo")
+    }
     const adminData = await response.json()
 
     if (adminData.client.role === "admin") {
