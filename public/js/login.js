@@ -18,7 +18,7 @@ const loginFormHandler = async function(event) {
 
     if (adminData.client.role === "admin") {
       console.log("it worked");
-      location.href = "/user/admin/vieworder"
+      location.href = "/admin/vieworder"
       return
     } else {location.href ="/"}
     console.log(adminData);

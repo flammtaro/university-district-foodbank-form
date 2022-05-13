@@ -6,7 +6,7 @@ const adminRoutes = require('./admin-routes.js');
 
 router.use('/', homeRoutes);
 router.use('/api', apiRoutes);
-router.use('/user', adminRoutes);
+router.use('/', adminRoutes);
 
 
 module.exports = router;
