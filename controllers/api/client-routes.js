@@ -32,7 +32,7 @@ router.post('/login', async (req, res) => {
         res.status(400).json({ message: 'No client account found!' });
         return;
       }
-  
+      console.log(client)
       const validPassword = client.checkPassword(req.body.password);
   
       if (!validPassword) {

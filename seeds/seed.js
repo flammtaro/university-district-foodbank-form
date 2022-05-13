@@ -25,9 +25,10 @@ const feedbacks = [
 
 const seed = async () => {
     await sequelize.sync({ force: true });
-    await Client.create(admin, { individualHooks: true });
+    const cli = await Client.create(admin, { individualHooks: true });
     await Order.create(order, { individualHooks: true });
     await Feedback.bulkCreate(feedbacks)
+    console.log(cli)
     process.exit(0)
 };
 
