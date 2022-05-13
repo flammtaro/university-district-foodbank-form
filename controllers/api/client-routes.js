@@ -29,11 +29,9 @@ router.post('/login', async (req, res) => {
       });
   
       if (!client) {
-        console.log("wrong password!")
         res.status(400).json({ message: 'No client account found!' });
         return;
       }
-      console.log(client)
       const validPassword = client.checkPassword(req.body.password);
   
       if (!validPassword) {
@@ -67,9 +65,5 @@ router.post('/logout', (req, res) => {
     }
   });
 
-  router.get("/",(req,res)=>{
-    Client.findAll().then(data=>{
-      res.json(data);
-    })
-  })
+
 module.exports = router;
