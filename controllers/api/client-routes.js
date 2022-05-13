@@ -29,6 +29,7 @@ router.post('/login', async (req, res) => {
       });
   
       if (!client) {
+        console.log("wrong password!")
         res.status(400).json({ message: 'No client account found!' });
         return;
       }
