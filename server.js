@@ -26,9 +26,6 @@ app.use(
     secret: "keyboard cat",
     resave: false,
     saveUninitialized: true,
-    cookie: {
-      maxAge: 2 * 60 * 60 * 1000,
-    },
     store: new SequelizeStore({
       db: sequelize,
     }),
