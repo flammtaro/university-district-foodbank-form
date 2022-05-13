@@ -4,7 +4,7 @@ const {withAuth} = require("../utils/auth")
 
 router.get("/", (req, res) => {
   if (req.session.loggedIn && req.session.role==="admin") {
-    res.redirect("/admin/viewOrder");
+    res.redirect("/admin/view-order");
     return;
   }
   if(req.session.loggedIn){
@@ -39,7 +39,7 @@ router.get("/login", (req, res) => {
 
 router.get("/signup", (req, res) => {
   if (req.session.loggedIn && req.session.role==="admin") {
-    res.redirect("/admin/viewOrder");
+    res.redirect("/admin/view-order");
     return;
   }
   if (req.session.loggedIn) {
@@ -52,7 +52,7 @@ router.get("/signup", (req, res) => {
 
 router.get("/processing", (req, res) => {
   if (req.session.loggedIn && req.session.role==="admin") {
-    res.redirect("/admin/viewOrder");
+    res.redirect("/admin/view-order");
     return;
   }
   res.render("processing");
