@@ -1,33 +1,31 @@
-
-
 const deleteBtns = document.querySelectorAll(".btn-outline-delete");
 
 deleteBtns.forEach((button) => {
-  button.addEventListener("click", (e) => {
-    console.log(e.target);
-    fetch(`/user/${e.target.dataset.orderid}`, { method: "DELETE" }).then(
-      (res) => {
-        if (res.ok) {
-          location.reload();
-        } else {
-          alert("Failed to delete.");
-        }
-      }
-    );
-  });
+    button.addEventListener("click", (e) => {
+        console.log(e.target);
+        fetch(`/order/${e.target.dataset.orderid}`, { method: "DELETE" }).then(
+            (res) => {
+                if (res.ok) {
+                    location.reload();
+                } else {
+                    alert("Failed to delete.");
+                }
+            }
+        );
+    });
 });
 
 const printBtns = document.querySelectorAll(".print-button");
 const orderCards = document.querySelectorAll(".order-card");
-printBtns.forEach(btn=>{
-  btn.addEventListener("click",e=>{
-    const card = e.target.parentElement.parentElement;
-    orderCards.forEach(oc=>{
-      oc.classList.remove("print-selected")
+printBtns.forEach(btn => {
+    btn.addEventListener("click", e => {
+        const card = e.target.parentElement.parentElement;
+        orderCards.forEach(oc => {
+            oc.classList.remove("print-selected")
+        })
+        card.classList.add("print-selected")
+        window.print()
     })
-    card.classList.add("print-selected")
-    window.print()
-  })
 })
 
 // const specialsInput = document.querySelector(".form-control");
@@ -46,7 +44,7 @@ printBtns.forEach(btn=>{
 //       "Content-Type": "application/json",
 //     },
 //   }).then((res) => {
-   
+
 //     if (res.ok) {
 //       location.reload();
 //     } else {
