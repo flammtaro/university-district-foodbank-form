@@ -18,15 +18,30 @@
 <body>
   <nav class="navbar navbar-expand-lg navbar-light bg light justify-content-end">
     <ul class="nav justify-content-end">
+      {{#if loggedIn}}
+      {{#if isAdmin}}
+      <li class="nav-item">
+        <a class="nav-link" href="/admin/viewOrder">Orders</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/admin/feedback">Feedback</a>
+      </li>
+      {{else}}
+       <li class="nav-item">
+        <a class="nav-link" href="/new-order">New Order</a>
+      </li>
+      {{/if}}
+      <li class="nav-item">
+        <a class="nav-link" href="#" id="logout-link">Logout</a>
+      </li>
+      {{else}}
       <li class="nav-item">
         <a class="nav-link" href="/login">Login</a>
       </li>
         <li class="nav-item">
         <a class="nav-link" href="/signup">Sign Up</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#" id="logout-link">Logout</a>
-      </li>
+      {{/if}}
     </ul>
   </nav>
 
@@ -50,6 +65,16 @@
 <br>
 <footer>
   © 2022 - University District Food Bank
+  <h5>This is a new app, if you have any feedback:</h3>
+  <form id="feedbackForm">
+    <div class="form-group">
+      <label for="feedback"></label>
+      <textarea type="text" name="" id="feedbackTA" class="form-control w-50 m-auto" placeholder="feedback here"></textarea>
+      
+    </div>
+    <button name="" id="" class="btn btn-primary">Submit</button>
+  </form>
 </footer>
 </html>
 <script src="/js/logout.js"></script>
+<script src="/js/feedback.js"></script>

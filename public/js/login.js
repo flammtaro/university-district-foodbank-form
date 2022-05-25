@@ -14,11 +14,14 @@ const loginFormHandler = async function(event) {
       }),
       headers: { 'Content-Type': 'application/json' },
     });
+    if(!response.ok){
+      alert("invalid email/password combo")
+    }
     const adminData = await response.json()
 
     if (adminData.client.role === "admin") {
       console.log("it worked");
-      location.href = "/user/admin/vieworder"
+      location.href = "/admin/vieworder"
       return
     } else {location.href ="/"}
     console.log(adminData);

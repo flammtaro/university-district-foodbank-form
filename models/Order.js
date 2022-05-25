@@ -7,7 +7,6 @@ class Order extends Model {}
 Order.init(
   {
     // define columns
-   
     inProgress: {
       type: DataTypes.BOOLEAN,
       defaultValue: false,

@@ -32,7 +32,6 @@ router.post('/login', async (req, res) => {
         res.status(400).json({ message: 'No client account found!' });
         return;
       }
-  
       const validPassword = client.checkPassword(req.body.password);
   
       if (!validPassword) {
@@ -65,4 +64,6 @@ router.post('/logout', (req, res) => {
       res.status(404).end();
     }
   });
+
+
 module.exports = router;
